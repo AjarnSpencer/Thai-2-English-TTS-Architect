@@ -1,0 +1,5 @@
+{
+  "name": "Phonetic Truth Architect",
+  "description": "A sophisticated training set generator for Neural TTS, focusing on high-fidelity pronunciation of Thai, Sanskrit, and Indic languages. Features automatic IPA generation, strict Romanization rules, and corpus management.",
+  "requestFramePermissions": []
+}
