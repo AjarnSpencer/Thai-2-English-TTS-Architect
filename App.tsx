@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import VowelMatrix from './components/VowelMatrix';
 import CorpusBuilder from './components/CorpusBuilder';
+import ApiKeyInput from './components/ApiKeyInput';
 import { ConsonantClass } from './types';
 
 const App: React.FC = () => {
@@ -11,27 +12,30 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-paper text-deep-slate font-sans">
       {/* Header */}
       <header className="bg-deep-slate text-white p-6 shadow-md border-b-4 border-sacred-gold sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
                 <h1 className="text-3xl font-serif tracking-wide text-sacred-gold">Phonetic Truth Architect</h1>
                 <p className="text-sm opacity-80 font-light mt-1">
                     Neural TTS Training Set Generator • Indic-Thai Fidelity System
                 </p>
             </div>
-            <nav className="flex space-x-1 bg-slate-800 p-1 rounded-lg">
-                <button 
-                    onClick={() => setActiveTab('corpus')}
-                    className={`px-4 py-2 rounded-md transition-all ${activeTab === 'corpus' ? 'bg-white text-deep-slate shadow font-semibold' : 'text-slate-400 hover:text-white'}`}
-                >
-                    Corpus Builder
-                </button>
-                <button 
-                    onClick={() => setActiveTab('matrix')}
-                    className={`px-4 py-2 rounded-md transition-all ${activeTab === 'matrix' ? 'bg-white text-deep-slate shadow font-semibold' : 'text-slate-400 hover:text-white'}`}
-                >
-                    Vowel Matrix
-                </button>
-            </nav>
+            <div className="flex items-center gap-4">
+                <ApiKeyInput />
+                <nav className="flex space-x-1 bg-slate-800 p-1 rounded-lg">
+                    <button 
+                        onClick={() => setActiveTab('corpus')}
+                        className={`px-4 py-2 rounded-md transition-all ${activeTab === 'corpus' ? 'bg-white text-deep-slate shadow font-semibold' : 'text-slate-400 hover:text-white'}`}
+                    >
+                        Corpus Builder
+                    </button>
+                    <button 
+                        onClick={() => setActiveTab('matrix')}
+                        className={`px-4 py-2 rounded-md transition-all ${activeTab === 'matrix' ? 'bg-white text-deep-slate shadow font-semibold' : 'text-slate-400 hover:text-white'}`}
+                    >
+                        Vowel Matrix
+                    </button>
+                </nav>
+            </div>
         </div>
       </header>
 

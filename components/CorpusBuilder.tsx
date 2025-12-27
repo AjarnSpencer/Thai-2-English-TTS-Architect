@@ -37,6 +37,7 @@ const CorpusBuilder: React.FC = () => {
   
   const [topic, setTopic] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   // Auto-calculate tone when input text changes
   useEffect(() => {
@@ -72,9 +73,19 @@ const CorpusBuilder: React.FC = () => {
   const handleAIGenerate = useCallback(async () => {
     if (!topic) return;
     setIsGenerating(true);
-    const newEntries = await generateLexicalEntries(topic);
-    setEntries(prev => [...prev, ...newEntries]);
-    setIsGenerating(false);
+    setErrorMsg('');
+    try {
+      const newEntries = await generateLexicalEntries(topic);
+      setEntries(prev => [...prev, ...newEntries]);
+    } catch (e: any) {
+        if (e.message === 'API_KEY_MISSING') {
+            setErrorMsg('Please enter a valid API Key in the "Set API Key" menu above.');
+        } else {
+            setErrorMsg('Generation failed. Please try again.');
+        }
+    } finally {
+        setIsGenerating(false);
+    }
   }, [topic]);
 
   const downloadTSV = () => {
@@ -181,6 +192,11 @@ const CorpusBuilder: React.FC = () => {
                     {isGenerating ? 'Thinking...' : 'Generate'}
                 </button>
             </div>
+            {errorMsg && (
+                <div className="mt-3 p-2 bg-red-100 border border-red-200 text-red-700 text-sm rounded relative z-10">
+                    ⚠️ {errorMsg}
+                </div>
+            )}
             <p className="text-xs text-slate-500 mt-4 relative z-10 leading-relaxed">
                 Describe a linguistic category in English (e.g., "words with rising tone") or use Thai prompts directly (e.g., "ตำศัพท์เกี่ยวกับวิปัสสนา") to generate specialized terminology.
             </p>
