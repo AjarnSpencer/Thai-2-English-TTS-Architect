@@ -1,13 +1,6 @@
 <div align="center">
 <img style="width:600; text-align:center;" src="https://github.com/AjarnSpencer/Thai-2-English-TTS-Architect/blob/main/screenshots/trutharchitectdesktop.png?raw=true">
 </div>
-
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1rWJA5I-91TTLqmoOR9pPLt9Qqm6k3Oy1
-
 ## Run Locally
 
 **Prerequisites:**  Node.js
