@@ -1,6 +1,7 @@
 <div align="center">
    <h2>Neural TTS Training Set Generator • Indic-Thai Fidelity System</h2>
 <img style="width:600; text-align:center;" src="https://github.com/AjarnSpencer/Thai-2-English-TTS-Architect/blob/main/screenshots/trutharchitectdesktop.png?raw=true">
+<p style="text-align:center;">A specialized linguistic workbench designed for building high-fidelity Neural TTS training datasets for Thai, Sanskrit, and Indic languages. The application features a deterministic "Self-Knowing" Tone Engine that algorithmically calculates lexical tones (Low, Mid, High, Falling, Risin</p>
 </div>
 ## Run Locally
 
