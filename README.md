@@ -13,7 +13,10 @@
    <img style="width:600; text-align:center;" src="https://github.com/AjarnSpencer/Thai-2-English-TTS-Architect/blob/main/screenshots/livetoneanalysis.png?raw=true">
 <img style="width:600; text-align:center;" src="https://github.com/AjarnSpencer/Thai-2-English-TTS-Architect/blob/main/screenshots/AI-expansion.png?raw=true">
 </div>
+
 ## Try Online:
+- **Click the link to try the app out online on the author's server (use your own API)**:
+
 <div align="center">
 <a href="https://phonetic-truth-architect-594226924032.us-west1.run.app/">Phonetic Truth Architect</a>
 </div>
